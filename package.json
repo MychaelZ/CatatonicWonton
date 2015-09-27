@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "an ed-tech spa",
   "scripts": {
+    "build": "gulp",
     "test": "mocha server/test",
-    "start": "gulp default"
+    "start": "node server/server.js",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",

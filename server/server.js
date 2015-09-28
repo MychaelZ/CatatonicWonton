@@ -2,7 +2,7 @@ var express = require('express');
 var sequelize = require('sequelize');
 var db = require('./db');
 var http = require('http');
-var port = process.env.PORT || 7000;
+var port = process.env.PORT || 8000;
 
 // Socket handler
 var socketHandler = require('./socketHandler');

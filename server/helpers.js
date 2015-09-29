@@ -7,15 +7,25 @@ var Utils = require('./utilities');
 module.exports = {
 
   findUsername: function (username) {
+    // return Promise
+    //   .some([
+        // Models.Student.findOne({
+        //   where: {username: username}
+        // }),
+        // Models.Teacher.findOne({
+        //   where: {username: username}
+        // })
+    //   ], 2);
+
     return Promise
-      .some([
+      .all([
         Models.Student.findOne({
           where: {username: username}
         }),
         Models.Teacher.findOne({
           where: {username: username}
         })
-      ], 2);
+      ]);
   },
 
   sendResponse: function (res) {

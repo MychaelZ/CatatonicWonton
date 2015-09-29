@@ -8,7 +8,9 @@ module.exports = function (passport) {
     function(username, password, done) {
       helpers
         .findUsername(username)
-        .spread(function (student, teacher) {
+        .then(function (results) {
+          var student = results[0];
+          var teacher = results[1];
           var user = student || teacher;
 
           if (!user) {
